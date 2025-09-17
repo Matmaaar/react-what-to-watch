@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #ff6600;
+  --color-brand: #ffe304;
   --color-brand-light: #ff944d;
   --color-brand-dark: #cc5200;
 }
@@ -20,3 +20,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+/* Chrome / Safari / Opera */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Firefox */
+.no-scrollbar { scrollbar-width: none; }
+
+/* IE / Edge (legacy) */
+.no-scrollbar { -ms-overflow-style: none; }

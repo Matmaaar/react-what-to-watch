@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import App from "./App";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Movie from "./pages/Movie";
+import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
 import './index.css'
 
@@ -16,7 +18,9 @@ const router = createBrowserRouter([
     errorElement: <NotFound />, // si URL inconnue
     children: [
       { index: true, element: <Home /> },   // / → Home
-      { path: "about", element: <About /> } // /about → About
+      { path: "about", element: <About /> },
+      { path: "favorites", element: <Favorites /> },
+      { path: "movie/:id", element: <Movie /> }
     ]
   }
 ]);
