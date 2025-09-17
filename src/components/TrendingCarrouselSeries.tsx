@@ -21,13 +21,13 @@ const TrendingCarouselSeries = ({
 
   return (
     <div>
-      <h1>Trending Now</h1>
-      <GenreFilters
+      <h1 className="text-3xl font-bold mb-8">TV Shows Trending Now</h1>
+      {/* <GenreFilters
         genres={genres}
         onGenreSelect={(id) =>
           setSelectedGenre((current) => (current === id ? null : id))
         }
-      />
+      /> */}
       <div className="overflow-x-auto no-scrollbar">
         <div className="flex gap-4">
           {filtered.map((serie) => (

@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 @theme {
   --color-brand: #ffe304;
   --color-brand-light: #ff944d;
   --color-brand-dark: #cc5200;
+  --color-background: #08121c
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

@@ -2,6 +2,7 @@ import "./App.css";
 import { Link, Outlet } from "react-router";
 import { useState, useEffect } from "react";
 import { getGenres } from "./api/tmdb";
+import Navbar from "./components/Navbar";
 
 
 
@@ -16,14 +17,7 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
-      <nav className="text-white p-6 text-2xl flex items-center justify-between">
-        <span>🚀 What to watch !</span>
-        <div className="space-x-4 text-base">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/about" className="hover:underline">About</Link>
-          <Link to="/favorites" className="hover:underline">Favorites</Link>
-        </div>
-      </nav>
+      <Navbar />
       {/* Main content */}
       <main className="flex-1">
 

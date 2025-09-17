@@ -33,19 +33,19 @@ const TrendingBanner = ({
     <div
       className="relative w-full flex items-center justify-center rounded-lg overflow-hidden"
       style={{
-        height: "70vh",
-        backgroundImage: `url(https://image.tmdb.org/t/p/w1920/${current.backdrop})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+      height: "70vh",
+      backgroundImage: `url(https://image.tmdb.org/t/p/w1920/${current.backdrop})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
       }}
     >
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.0) 70%)",
-          zIndex: 1,
-        }}
+      className="absolute inset-0"
+      style={{
+        background:
+        "linear-gradient(to top, #08121c 0%, rgba(8,18,28,0.8) 5%, rgba(8,18,28,0.0) 80%)",
+        zIndex: 1,
+      }}
       />
       <div className="relative z-10 w- max-w-3xl mx-auto p-8 text-white">
         <h2 className="text-2xl mb-2 drop-shadow-lg">{current.label}</h2>

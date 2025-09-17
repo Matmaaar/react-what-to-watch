@@ -18,8 +18,8 @@ const TrendingCarousel = ({ movies, genres }: { movies: Movie[]; genres: Genre[]
 
   return (
     <div>
-      <h1>Trends Now</h1>
-      <GenreFilters genres={genres} onGenreSelect={(id) => setSelectedGenre((current) => (current === id ? null : id))} />
+      <h1 className="text-3xl font-bold mb-8">Movies Trending Now</h1>
+      {/* <GenreFilters genres={genres} onGenreSelect={(id) => setSelectedGenre((current) => (current === id ? null : id))} /> */}
       <div className="overflow-x-auto no-scrollbar">
   <div className="flex gap-4">
     {filtered.map((movie) => (

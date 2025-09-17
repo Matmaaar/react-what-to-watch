@@ -1,3 +1,5 @@
+import type { Movie } from "../types.js";
+
 const Url = "https://api.themoviedb.org/3";
 const ApiKey = "b015e4f8a58b9f851a624efe450890d8";
 const UrlGenres = `${Url}/genre/movie/list?api_key=${ApiKey}&language=fr-FR`;
@@ -6,20 +8,31 @@ const getGenres = async () => {
   const response = await fetch(UrlGenres);
   const data = await response.json();
   return data.genres;
-}
+};
 
 const getTrendingMovies = async () => {
-  const response = await fetch(`${Url}/movie/popular?api_key=${ApiKey}&language=fr-FR`);
+  const response = await fetch(
+    `${Url}/movie/popular?api_key=${ApiKey}&language=fr-FR`
+  );
   const data = await response.json();
   return data.results;
 };
 
 const getTrendingSeries = async () => {
-  const response = await fetch(`${Url}/tv/popular?api_key=${ApiKey}&language=fr-FR`);
+  const response = await fetch(
+    `${Url}/tv/popular?api_key=${ApiKey}&language=fr-FR`
+  );
   const data = await response.json();
   return data.results;
 };
 
+const getMovie = async (id: number) => {
+  const response = await fetch(
+    `${Url}/movie/${id}?api_key=${ApiKey}&language=fr-FR`
+  );
+  const data = await response.json();
+  return data;
+};
 
 type Filters = {
   year?: number;
@@ -27,7 +40,9 @@ type Filters = {
 };
 
 const searchMovies = async (query: string, filters: Filters) => {
-  let url = `${Url}/search/movie?api_key=${ApiKey}&language=fr-FR&query=${encodeURIComponent(query)}`;
+  let url = `${Url}/search/movie?api_key=${ApiKey}&language=fr-FR&query=${encodeURIComponent(
+    query
+  )}`;
   if (filters.year) {
     url += `&year=${filters.year}`;
   }
@@ -37,6 +52,12 @@ const searchMovies = async (query: string, filters: Filters) => {
   const response = await fetch(url);
   const data = await response.json();
   return data.results;
-}
+};
 
-export { getTrendingMovies, getGenres, searchMovies, getTrendingSeries };
+export {
+  getTrendingMovies,
+  getGenres,
+  searchMovies,
+  getTrendingSeries,
+  getMovie,
+};
