@@ -40,7 +40,7 @@ const Home = () => {
       <div className="m-20">
         <TrendingCarousel movies={movies} genres={genres} />
         <TrendingCarouselSeries series={series} genres={genres} />
-        <ProviderSearch content={providerContent} genres={genres} type={type} onProviderChange={setProviderId} />
+        <ProviderSearch content={providerContent} genres={genres} type={type} onProviderChange={setProviderId} onTypeChange={setType} providerId={providerId} />
       </div>
     </div>
   );
