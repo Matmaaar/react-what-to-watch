@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Movie from "./pages/Movie";
 import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
+import Serie from "./pages/Serie";
 import './index.css'
 
 
@@ -20,7 +21,10 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },   // / → Home
       { path: "about", element: <About /> },
       { path: "favorites", element: <Favorites /> },
-      { path: "movie/:id", element: <Movie /> }
+      { path: "movie/:id", element: <Movie /> },
+      { path: "serie/:id", element: <Serie /> },
+      { path: "movies", element: <Movie /> },
+      { path: "tv-show", element: <tv-show /> }
     ]
   }
 ]);

@@ -1,7 +1,7 @@
 import type { Movie } from "../types.js";
 
 const Url = "https://api.themoviedb.org/3";
-const ApiKey = "b015e4f8a58b9f851a624efe450890d8";
+const ApiKey = import.meta.env.VITE_TMDB_API_KEY;
 const UrlGenres = `${Url}/genre/movie/list?api_key=${ApiKey}&language=fr-FR`;
 
 const getGenres = async () => {
@@ -34,6 +34,14 @@ const getMovie = async (id: number) => {
   return data;
 };
 
+const getSerie = async (id: number) => {
+  const response = await fetch(
+    `${Url}/tv/${id}?api_key=${ApiKey}&language=fr-FR`
+  );
+  const data = await response.json();
+  return data;
+};
+
 type Filters = {
   year?: number;
   genre?: number;
@@ -60,4 +68,5 @@ export {
   searchMovies,
   getTrendingSeries,
   getMovie,
+  getSerie,
 };

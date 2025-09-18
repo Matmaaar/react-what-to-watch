@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 type SerieCardProps = {
   id: number;
   title: string;
@@ -7,6 +10,7 @@ type SerieCardProps = {
 
 export default function SerieCard({ id, title, poster_path, overview }: SerieCardProps) {
   return (
+    <Link to={`/movie/${id}`}>
     <div
       key={id}
       className="relative group flex-shrink-0 mr-4 rounded-lg shadow-lg overflow-hidden"
@@ -26,6 +30,9 @@ export default function SerieCard({ id, title, poster_path, overview }: SerieCar
 
       {/* Shadow */}
       <div className="absolute inset-0 rounded-lg group-hover:shadow-2xl transition duration-300"></div>
+
     </div>
+    </Link>
+
   );
 }
