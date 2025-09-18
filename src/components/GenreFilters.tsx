@@ -18,10 +18,10 @@ if (!genres || genres.length === 0) {
   return (
   <div>
     {genres.map((genre) => (
-      <button
+      <button className="bg-brand"
         key={genre.id}
         onClick={() => onGenreSelect(genre.id)}
-        className="m-1 border border-brand px-3 py-1 rounded-full text-sm hover:bg-brand hover:text-black transition"
+        className="m-1 border border-brand px-3 py-1 rounded-full text-sm hover:bg-brand transition"
       >
         {genre.name}
       </button>

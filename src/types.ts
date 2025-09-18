@@ -21,3 +21,5 @@ export type Serie = {
   genre_ids: number[];
   overview: string;
 };
+
+export type Content = Movie | Serie;

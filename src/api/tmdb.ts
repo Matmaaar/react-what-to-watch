@@ -62,6 +62,16 @@ const searchMovies = async (query: string, filters: Filters) => {
   return data.results;
 };
 
+
+const getTopRatedByProvider = async (providerId: number, type: "movie" | "tv", page = 1) => {
+  const response = await fetch(
+    `${Url}/discover/${type}?api_key=${ApiKey}&language=fr-FR&sort_by=vote_average.desc&with_watch_providers=${providerId}&watch_region=FR`
+  );
+  const data = await response.json();
+  return data;
+};
+
+
 export {
   getTrendingMovies,
   getGenres,
@@ -69,4 +79,5 @@ export {
   getTrendingSeries,
   getMovie,
   getSerie,
+  getTopRatedByProvider
 };
